@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+    <link rel="stylesheet" href="styluses.css">
+	
+    <title>crud Alunos</title>
+
+    <script>
+        function confirmDelete(event) {
+            if (!confirm("Você tem certeza de que deseja excluir este post?")) {
+                event.preventDefault(); // Impede a navegação se a confirmação for cancelada
+            }
+        }
+    </script>
+	
+</head>
+<body>
+
+    <main>
+        <h1>CRUD Alunos</h1>
+        <div>
+            <table id="agenda">
+                <tr>
+                    <th>id</th>
+                    <th>nome</th>
+                    <th>telefone</th>
+                    <th>E-mail</th>
+                    <th>Endereco</th>
+                </tr>
+                <tr th:each="agendamento : ${agendamentos}">
+                    <td th:text="${agendamento.id}"></td>
+                    <td th:text="${agendamento.descricao}"></td>
+                    <td th:text="${agendamento.funcionario.nome}"></td>
+                    <td th:text="${agendamento.cliente.nome}"></td>
+                    <td th:text="${agendamento.servico.nome}"></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+	
+
+</body>
+</html>

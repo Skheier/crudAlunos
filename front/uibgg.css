@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+:root{
+    font-size: 16px; /*tamanho fonte*/
+    font-family: Lato, Arial, sans-serif;
+
+    --text-primary: #333333; /*escuro*/
+    --text-secondary: #dfdada; /*claro*/
+    --bg-primary: #f00808; /*Vermelho*/
+    --bg-secondary: #6d6b62; /*Marrors*/
+
+    --transition-speed: 600ms;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+body {
+  background-color: white;
+  /*background-color: #6d695c;*/
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAACVBMVEUAAAAAAAAAAACDY+nAAAAAA3RSTlMmDQBzGIDBAAAAG0lEQVR42uXIIQEAAADCMHj/0NdkQMws0HEeAqvwAUGJthrXAAAAAElFTkSuQmCC);
+  font-size: 150%;
+  color: black;
+  color: #333;
+  font-family: Lato, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+  
+body::-webkit-scrollbar{
+  width: 0,25rem;
+}
+body::-webkit-scrollbar-thumb{
+  background: #f00808;
+}
+body::-webkit-scrollbar-track{
+  background: #8e7765;
+} /*marrom #8e7765;*/
+/*vermeho #f00808;*/
+
+
+main {
+  display: block;
+  box-sizing: border-box;
+  width: auto;
+  padding: 1em 2vw;
+  padding: 1rem;
+  margin: 2em 6vw; /*CASO <main> FIQUE com tamanho ABERRANTE encontre os valores originais desta variável no documento original */
+  color: #000;
+  background-color: rgba(204, 204, 204, 0.7); 	/*COr do fundo*/
+  border: 0.07em solid rgba(0, 0, 0, 0.5);		/*Borda*/
+  border-radius: 0.5em; 						/*Arredondamento borda*/
+}
+
+table {
+  margin: 1em 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+caption {
+  text-align: left;
+  font-style: italic;
+  padding: 0.25em 0.5em 0.5em 0.5em;
+}
+
+th,
+td {
+  padding: 0.25em 0.5em 0.25em 1em;
+  vertical-align: text-top;
+  text-align: right;
+  text-indent: -0.5em;
+
+}
+
+th {
+  vertical-align: bottom;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: bold;
+  border: 0.07em solid rgba(0, 0, 0, 0.5);/*COLOCADO PRA TEST TIRAR*/
+}
+
+td::before {
+  display: none;
+}
+
+/*Filhos alternam cor*/
+tr:nth-child(even) { /*se aplica a todas as linhas de todas as */
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*Controla estilo baseado na contagem. Ex: segundo = (nth-of-type(2)) ou terceiro = (nth-of-type(3)) elemento*/ /*UTIL P*/
+/*
+td:nth-of-type(2) {
+  font-style: italic;
+}
+
+th:nth-of-type(3),
+td:nth-of-type(3) {
+  text-align: right;
+}
+*/
+
+div {
+  overflow: auto;
+}
+
+@media screen and (max-width: 37em), print and (max-width: 5in) {
+  table,
+  tr,
+  td {
+    display: block;
+  }
+  tr {
+    padding: 0.7em 2vw;
+  }
+  th,
+  tr:first-of-type {
+    display: none;
+  }
+  td::before {
+    display: inline;
+    font-weight: bold;
+  }
+  td {
+    display: grid;
+    grid-template-columns: 4em auto;
+    grid-gap: 1em 0.5em;
+  }
+  caption {
+    font-style: normal;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    font-weight: bold;
+  }
+  td:nth-of-type(3) {
+    text-align: left;
+  }
+  td:nth-of-type(4), td:nth-of-type(5) {
+    text-align: right;
+    width: 12em;
+  }
+  td:nth-of-type(4)::before, td:nth-of-type(5)::before {
+    text-align: left;
+  }
+  td:nth-of-type(2)::before {
+    font-style: normal;
+  }
+}
+
+@media print {
+  body {
+    font-size: 6pt;
+    color: #000;
+    background-color: #fff;
+    background-image: none;
+  }
+  body,
+  main {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border: none;
+  }
+  table {
+    page-break-inside: avoid;
+  }
+  div {
+    overflow: visible;
+  }
+  th {
+    color: #000;
+    background-color: #fff;
+    border-bottom: 1pt solid #000;
+  }
+  tr {
+    border-top: 1pt solid #000;
+  }
+}
+
+@media print and (max-width: 5in) {
+  caption {
+    color: #000;
+    background-color: #fff;
+    border-bottom: 1pt solid #000;
+  }
+  table {
+    page-break-inside: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+  }
+}
+
+body::-webkit-scrollbar{
+    width: 0,25rem;
+}
+body::-webkit-scrollbar-thumb{
+    background: #f00808;
+}
+body::-webkit-scrollbar-track{
+    background: #8e7765;
+} /*marrom #8e7765;*/
+  /*vermeho #f00808;*/
+
+
+
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-secondary);
+  transition: width 600ms ease;
+  overflow: scroll;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.fa-primary {
+  color: #ff7eee;
+}
+
+.fa-secondary {
+  color: #df49a6;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+.logo-text
+{
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  .navbar:hover .logo svg
+  {
+    margin-left: 11rem;
+  }
+
+  .navbar:hover .logo-text
+  {
+    left: 0px;
+  }
+}
